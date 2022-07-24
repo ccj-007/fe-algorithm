@@ -10,13 +10,13 @@
  * @param {number} val
  * @return {number}
  */
-var removeElement = function(nums, val) {
+var removeElement = function (nums, val) {
   // 双指针
   // [3,2,2,3] 3
   let k = 0
   for (let i = 0; i < nums.length; i++) {
-    if(nums[i]!==val){
-        nums[k++] = nums[i]
+    if (nums[i] !== val) {
+      nums[k++] = nums[i]
     }
   }
   return k

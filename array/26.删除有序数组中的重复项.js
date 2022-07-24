@@ -9,25 +9,27 @@
  * @param {number[]} nums
  * @return {number}
  */
-var removeDuplicates = function(nums) {
+var removeDuplicates = function (nums) {
   // [1,1,2,2,3,3,3]
   // [1,2,3,2,3,3,4,]
   // [1,2,3,4,3,4,4]
   // slow fast
   // []
-  if(nums.length===0){
+  if (nums.length === 0) {
     return 0
   }
   let slow = 0
   let fast = 0
-  while(fast<nums.length){
-    if(nums[fast]!==nums[slow]){
+
+  //双指针解法，fast不断增加，如果不等，slow增加并替换，最终返回slow + 1
+  while (fast < nums.length) {
+    if (nums[fast] !== nums[slow]) {
       slow++
       nums[slow] = nums[fast]
     }
     fast++
   }
-  return slow+1
+  return slow + 1
 };
 // @lc code=end
 
